@@ -10,13 +10,47 @@ A production-ready vector store built entirely on SQLite with WAL mode, mmap, an
 
 The vector-database market assumes you have a dedicated server, a DevOps team, and budget for Qdrant/Milvus/Pinecone. Most AI applications do not. GaloGlyph Engine proves that SQLite — with the right PRAGMA tuning and a custom compression layer — can handle millions of semantic vectors on commodity hardware.
 
-| Metric | GaloGlyph (SQLite) | Qdrant (typical) |
+### Honest Comparison
+
+GaloGlyph is **not a FAISS replacement**. It occupies a different point in the trade-off space: maximum storage efficiency and zero-dependency deployment over raw search throughput.
+
+**Storage footprint — 1M vectors (128-dim):**
+
+| Engine | Storage | vs GaloGlyph |
 |---|---|---|
-| RAM required | 2 GB VPS | 8+ GB recommended |
-| GPU required | No | Optional |
-| Dependencies | numpy only | Docker + Qdrant server |
-| Storage per 128-dim vector | 129 bytes (FP8) | 512 bytes (FP32) |
-| Setup time | pip install numpy | docker pull + config |
+| **GaloGlyph FP8** | **~129 MB** | baseline |
+| FAISS (FP32) | ~512 MB | 4x larger |
+| Chroma | ~600 MB+ | 4.6x larger |
+| pgvector (FP32) | ~512 MB + PG overhead | 4x+ larger |
+| Qdrant | ~512 MB + server | 4x+ larger |
+
+**Search latency (cosine, top-5, pure Python):**
+
+| Engine | 10K vectors | 100K vectors | Notes |
+|---|---|---|---|
+| **GaloGlyph** | **~180 ms** | **~2 s** | Pure Python, no index |
+| FAISS (Flat) | <5 ms | <20 ms | C++ SIMD, IVF index |
+| pgvector | ~30 ms | ~300 ms | PostgreSQL planner |
+| Chroma | ~50 ms | ~500 ms | Python + HNSW |
+
+**Deployment:**
+
+| | GaloGlyph | FAISS | Chroma | pgvector |
+|---|---|---|---|---|
+| Install | `pip install numpy` | C++ build tools + cmake | `pip install chromadb` + server | PostgreSQL stack |
+| Server required | No | No | Yes | Yes |
+| Min RAM | 256 MB | 1 GB | 2 GB | 2 GB |
+| Windows support | Yes | Complex | Yes | Complex |
+
+**When to use GaloGlyph:**
+- Embedded AI on edge devices, VPS with 256 MB–2 GB RAM
+- Applications where setup complexity is a constraint (no Docker, no C++ toolchain)
+- Datasets up to ~200K vectors where 2s search latency is acceptable
+- Multi-tenant architectures needing per-tenant SQLite file isolation
+
+**When to use FAISS instead:**
+- Datasets > 500K vectors with sub-10ms latency requirements
+- Dedicated ML infrastructure where C++ deps are not a constraint
 
 ---
 

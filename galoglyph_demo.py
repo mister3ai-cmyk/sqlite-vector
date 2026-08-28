@@ -24,10 +24,11 @@ import hashlib
 import threading
 import random
 import struct
+import tempfile
 from typing import List, Tuple, Optional
 
 # ── Configuration ─────────────────────────────────────────────────────────────
-DB_PATH   = "/tmp/galoglyph_bench.db"
+DB_PATH   = os.path.join(tempfile.gettempdir(), "galoglyph_bench.db")
 DIM       = 128        # Embedding dimensionality
 N_VECTORS = 10_000     # Vectors to insert in benchmark
 BLOCK_B   = 128        # FP8 block size
