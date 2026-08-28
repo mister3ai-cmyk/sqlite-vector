@@ -1,14 +1,18 @@
 # NGP 4.5 — Research Directions
 
-> **These are not job postings.**
+> **These are not job postings. We do not pay in cash.**
 >
-> All engineering and research inside NGP 4.5 is built in-house by the core team.
-> This page documents our active research directions and their technical complexity —
-> published for transparency, not for outsourcing.
+> All core engineering inside NGP 4.5 is built in-house.
+> This page documents active research directions — published for transparency,
+> not to hire contractors.
+>
+> Compensation is in **PoK (Proof of Curation)** — the reputation currency of the NGP network.
+> Early PoK holders get priority access to enclaves, future governance rights,
+> and a permanent record in the L1 Neocortex as founding contributors.
 >
 > If you are a researcher who has **already solved** one of these problems
-> and has reproducible results — you may apply through the marketplace.
-> We do not accept speculative proposals, partial implementations, or spaghetti code.
+> with reproducible results — apply through the marketplace.
+> We do not accept speculative proposals, partial work, or spaghetti code.
 >
 > **Intake:** [iskra-ngp.duckdns.org](https://iskra-ngp.duckdns.org) only.
 > GitHub PRs are automatically closed.
@@ -19,18 +23,18 @@
 
 | # | Task | Reward | Domain | Status |
 |---|------|--------|--------|--------|
-| 1 | [PPR Search Acceleration](#1-ppr-search-acceleration) | $300 USDC | Graph Search | 🟢 Open |
-| 2 | [Karabut Protocol Integration](#2-karabut-protocol-integration) | $500 USDC | Biophysics | 🟢 Open |
-| 3 | [SILA Dynamics Module](#3-sila-dynamics-module) | $400 USDC | Energy Systems | 🟢 Open |
-| 4 | [P2P CRDT Sync Engine](#4-p2p-crdt-sync-engine) | $800 USDC | Distributed Systems | 🟢 Open |
+| 1 | [PPR Search Acceleration](#1-ppr-search-acceleration) | 30 PoK | Graph Search | 🟢 Open |
+| 2 | [Karabut Protocol Integration](#2-karabut-protocol-integration) | 50 PoK | Biophysics | 🟢 Open |
+| 3 | [SILA Dynamics Module](#3-sila-dynamics-module) | 40 PoK | Energy Systems | 🟢 Open |
+| 4 | [P2P CRDT Sync Engine](#4-p2p-crdt-sync-engine) | 80 PoK | Distributed Systems | 🟢 Open |
 
-Total bounty pool: **$2,000 USDC**
+Total pool: **200 PoK** — founding contributor tier
 
 ---
 
 ## 1. PPR Search Acceleration
 
-**Reward: $300 USDC + 15 PoK**
+**Reward: 30 PoK (founding contributor)**
 
 Personalized PageRank (Local Push algorithm) over the GaloGlyph vector graph.
 Currently O(n) cosine scan — need sublinear retrieval at 1M+ node scale.
@@ -46,7 +50,7 @@ Currently O(n) cosine scan — need sublinear retrieval at 1M+ node scale.
 
 ## 2. Karabut Protocol Integration
 
-**Reward: $500 USDC + 20 PoK**
+**Reward: 50 PoK (founding contributor)**
 
 Karabut effect: anomalous heat release in deuterium-loaded palladium systems.
 We need a computational model integrating with our BIO-EEL-PROTOCOL enclave.
@@ -62,7 +66,7 @@ We need a computational model integrating with our BIO-EEL-PROTOCOL enclave.
 
 ## 3. SILA Dynamics Module
 
-**Reward: $400 USDC + 18 PoK**
+**Reward: 40 PoK (founding contributor)**
 
 Coherent energy field dynamics based on Frohlich condensate model.
 Extend our BIO-FROHLICH-COND enclave with non-equilibrium thermodynamics.
@@ -78,7 +82,7 @@ Extend our BIO-FROHLICH-COND enclave with non-equilibrium thermodynamics.
 
 ## 4. P2P CRDT Sync Engine
 
-**Reward: $800 USDC + 35 PoK**
+**Reward: 80 PoK (founding contributor)**
 
 Decentralized peer-to-peer CRDT synchronization layer for Swarm Memory (Роевая Память) in NGP 4.5.
 Zero central coordinator. Conflict-free merge over a distributed knowledge graph via Vector Clocks.
@@ -138,14 +142,23 @@ All intake, review, and payment happens through the marketplace.
 
 ## Proof of Curation (PoK)
 
-Every completed bounty earns PoK points — the reputation currency of the NGP network.
-PoK unlocks access to higher-tier enclaves and future governance rights.
+PoK is the reputation currency of the NGP network. It is not a promise of future cash —
+it is a permanent, cryptographically signed record of your contribution to the system.
 
-| Role | PoK per bounty |
-|------|---------------|
-| Researcher / Author | +5 base + task bonus |
+**What PoK gives you:**
+- Priority access to higher-tier research enclaves
+- Founding contributor status in the L1 Neocortex (immutable, Ed25519 signed)
+- Governance weight in future protocol decisions
+- Visibility to the Syn Syndicate core team
+
+| Role | PoK per contribution |
+|------|---------------------|
+| Researcher / Author | task reward (see above) |
 | Reviewer | +2 |
 | Referrer | +2 |
+
+We are an early-stage research network. We are honest about that.
+The people who build with us now are the ones who will matter when it scales.
 
 ---
 
