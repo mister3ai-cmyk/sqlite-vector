@@ -12,8 +12,9 @@ All work is validated and paid through the NGP marketplace — not via GitHub PR
 | 1 | [PPR Search Acceleration](#1-ppr-search-acceleration) | $300 USDC | Graph Search | 🟢 Open |
 | 2 | [Karabut Protocol Integration](#2-karabut-protocol-integration) | $500 USDC | Biophysics | 🟢 Open |
 | 3 | [SILA Dynamics Module](#3-sila-dynamics-module) | $400 USDC | Energy Systems | 🟢 Open |
+| 4 | [P2P CRDT Sync Engine](#4-p2p-crdt-sync-engine) | $800 USDC | Distributed Systems | 🟢 Open |
 
-Total bounty pool: **$1,200 USDC**
+Total bounty pool: **$2,000 USDC**
 
 ---
 
@@ -62,6 +63,54 @@ Extend our BIO-FROHLICH-COND enclave with non-equilibrium thermodynamics.
 - Numerical stability across physiological parameter ranges
 
 **Stack:** Python. Domain: quantum biology, biophysics.
+
+---
+
+## 4. P2P CRDT Sync Engine
+
+**Reward: $800 USDC + 35 PoK**
+
+Decentralized peer-to-peer CRDT synchronization layer for Swarm Memory (Роевая Память) in NGP 4.5.
+Zero central coordinator. Conflict-free merge over a distributed knowledge graph via Vector Clocks.
+
+**Core requirements:**
+
+- **Vector Clock Model** on SQLite transactional core — logical time map for all swarm agents
+- **4-step conflict resolution:** Logical Time → Trust Tier (architect > builder > contributor > stranger) → PoK Balance (λ-decay 0.0495) → SHA-256 content hash tiebreaker
+- **Tombstone Registry** — immutable deletion registry with Ed25519 veto signatures; absolute priority over any write operation
+- **NoveltyVN security module:** blocked patterns (eval/exec/os.system → permanent ban, obfuscated Base64 → PoK zeroing), Mock SSE injection neutralization, TokenShield loop detection via BLAKE3 rolling hashes
+- **Sabotage Index monitoring:** S_index = (A_forced / F_events) × 1.5; S_index ≥ 0.7 → Quarantine Mode
+- **WAL checkpoint** background service every 30 seconds (HermesHeartbeatSentinel pattern)
+
+**Performance target:** 12,000+ transactions/second under concurrent write load.
+
+**SQLite schema (provided):**
+```sql
+CREATE TABLE p2p_vector_clocks (
+    agent_id    TEXT PRIMARY KEY,  -- Ed25519 PubKey
+    clock_value INTEGER DEFAULT 0,
+    trust_tier  TEXT CHECK(trust_tier IN ('architect','builder','contributor','stranger')),
+    last_sync   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE p2p_transaction_deltas (
+    glyph_id        TEXT PRIMARY KEY,
+    origin_agent_id TEXT,
+    vector_state    BLOB,   -- serialized vector clock at creation time
+    payload_blob    BLOB,   -- quantized delta (Cube-Split CDF)
+    signature       BLOB,   -- Ed25519 (L0 Hardware Fallback)
+    FOREIGN KEY (origin_agent_id) REFERENCES p2p_vector_clocks(agent_id)
+);
+```
+
+**E2E test suite required (Docker, 256 MB RAM limit):**
+- NetSplit simulation: node isolation + parallel conflicting HaloGlyph writes
+- Vector merge: reconnect + automatic logical time merge
+- PoK decay: reputation degradation after 14-day idle simulation
+- NoveltyVN breach: shutil.rmtree injection attempt + Mock SSE detection
+- Tombstone veto: resurrection attempt on tombstoned node
+
+**Stack:** Python, SQLite, cryptography (Ed25519), Docker. No external databases.
 
 ---
 
