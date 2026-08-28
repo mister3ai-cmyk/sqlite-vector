@@ -1,7 +1,17 @@
-# NGP 4.5 — Open Bounties
+# NGP 4.5 — Research Directions
 
-We publish research and engineering challenges from the NetGlyph Protocol stack.
-All work is validated and paid through the NGP marketplace — not via GitHub PRs.
+> **These are not job postings.**
+>
+> All engineering and research inside NGP 4.5 is built in-house by the core team.
+> This page documents our active research directions and their technical complexity —
+> published for transparency, not for outsourcing.
+>
+> If you are a researcher who has **already solved** one of these problems
+> and has reproducible results — you may apply through the marketplace.
+> We do not accept speculative proposals, partial implementations, or spaghetti code.
+>
+> **Intake:** [iskra-ngp.duckdns.org](https://iskra-ngp.duckdns.org) only.
+> GitHub PRs are automatically closed.
 
 ---
 
