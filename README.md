@@ -207,6 +207,22 @@ GaloGlyph Engine is the vector storage layer of the NetGlyph Protocol (NGP) — 
 
 ---
 
+## Bounties
+
+We fund research and engineering work through the NGP marketplace.
+
+| Task | Reward | Status |
+|------|--------|--------|
+| PPR Search Acceleration | $300 USDC | Open |
+| Karabut Protocol Integration | $500 USDC | Open |
+| SILA Dynamics Module | $400 USDC | Open |
+
+Full details and application: [BOUNTIES.md](BOUNTIES.md)
+
+All intake through the [NGP Marketplace](https://iskra-ngp.duckdns.org) -- not via GitHub PRs.
+
+---
+
 ## License
 
 MIT
