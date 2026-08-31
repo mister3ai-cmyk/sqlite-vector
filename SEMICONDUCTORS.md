@@ -1,208 +1,208 @@
-# SEMICONDUCTORS: Физические пределы и инженерные решения для фотонной памяти и ультрабыстрой спектроскопии
+# SEMICONDUCTORS: Physical Storage Limits and Engineering Solutions for Photonic Memory and Ultrafast Spectroscopy
 
-**Статус:** R&D Cognitive Teaser · Stealth-Sovereignty Release  
-**Версия:** 1.0.0 · Дата: 2026-08-31  
-**Разделов:** 4 · Формул: 12 · Таблиц: 2  
-**Репозиторий:** sqlite-vector / GaloGlyph Engine — Synapse Core SDK · R&D Branch
+**Status:** Open R&D Release · Reproducible Research  
+**Version:** 1.1.0 · Date: 2026-08-31  
+**Sections:** 4 · Equations: 12 · Tables: 2  
+**Repository:** sqlite-vector / Synapse Core SDK — R&D Branch
 
-> **Примечание к раскрытию.** Настоящий документ публикует фундаментальные физические пределы и верифицируемые уравнения состояния в соответствии с принципами Open Science. Оптимизационный код, СУБД-интеграция и закрытые весовые модели остаются проприетарными компонентами, доступными через коммерческий контур Synapse OS Cognitive Marketplace v3.0. Разделы 1–3 воспроизводимы в независимой лаборатории; раздел 4 описывает условия доступа к gated-IP.
+> **Disclosure Notice.** This document publishes fundamental physical limits and verifiable equations under Open Science principles. Optimization code, database integration modules, and closed-weight models remain proprietary components accessible through the Synapse OS Cognitive Marketplace v3.0 enterprise tier. Sections 1–3 are independently reproducible in any equipped laboratory; Section 4 describes the conditions of access to gated IP.
 
 ---
 
-## 1. ТРЁХМЕРНАЯ ГОЛОГРАФИЧЕСКАЯ ПАМЯТЬ НА КРИСТАЛЛАХ LiNbO₃
+## 1. Volumetric Holographic Storage in LiNbO₃ Crystals
 
-### 1.1 Предел ёмкости по Ван Хирдену
+### 1.1 van Heerden Storage Capacity Limit
 
-Фундаментальная верхняя граница объёмной голографической ёмкости определяется пределом Ван Хирдена (van Heerden Limit) [1], который следует из теоремы Найквиста–Шеннона, применённой к трёхмерному оптическому полю:
+The fundamental upper bound on volumetric holographic storage density is given by the van Heerden Limit [1], derived from the Nyquist–Shannon sampling theorem applied to a three-dimensional optical field:
 
 $$\rho_{\max} = \frac{n_0^3}{\lambda^3}$$
 
-где $n_0$ — показатель преломления среды, $\lambda$ — длина волны записи. Для кристалла ниобата лития (LiNbO₃) при длине волны записывающего лазера $\lambda = 532$ нм и ординарном показателе преломления $n_0 = 2.2$:
+where $n_0$ is the medium refractive index and $\lambda$ is the recording wavelength. For lithium niobate (LiNbO₃) at recording wavelength $\lambda = 532\ \text{nm}$ and ordinary refractive index $n_0 = 2.2$:
 
-$$\rho_{\max}(\text{LiNbO}_3) = \frac{(2.2)^3}{(532 \times 10^{-9})^3} = \frac{10.648}{1.508 \times 10^{-19}} \approx 7.07 \times 10^{19}\ \text{бит/м}^3$$
+$$\rho_{\max}(\text{LiNbO}_3) = \frac{(2.2)^3}{(532 \times 10^{-9})^3} = \frac{10.648}{1.508 \times 10^{-19}} \approx 7.07 \times 10^{19}\ \text{bit/m}^3$$
 
-Переводя в практические единицы:
+Converting to practical units:
 
-$$\rho_{\max}(\text{LiNbO}_3) \approx 70.7\ \text{Тбит/см}^3$$
+$$\rho_{\max}(\text{LiNbO}_3) \approx 70.7\ \text{Tbit/cm}^3$$
 
-Для сравнения: квантово-голографическая модель неокортекса Прибрама–Нишиямы [2], основанная на распределении синаптических весов в пространстве волновых векторов, даёт оценку ёмкости коры головного мозга:
+For comparison, the quantum-holographic model of the neocortex by Pribram and Nishiyama [2], based on synaptic weight distributions in wave-vector space, estimates the cortical storage capacity at:
 
-$$\rho_{\text{neocortex}} \approx 17.6\ \text{Тбит/см}^3$$
+$$\rho_{\text{neocortex}} \approx 17.6\ \text{Tbit/cm}^3$$
 
-Таким образом, LiNbO₃ при $\lambda = 532$ нм превосходит биологический предел по информационной плотности в **4.02 раза** при сопоставимом объёме рабочего вещества.
+LiNbO₃ at $\lambda = 532\ \text{nm}$ therefore exceeds the biological limit by a factor of **4.02×** at comparable material volume.
 
-### 1.2 Теорема сдвиговой селективности Барбастатиса–Псалтиса
+### 1.2 Barbastathis–Psaltis Shift Selectivity Theorem
 
-Для мультиплексирования голограмм методом сдвигового кодирования (shift multiplexing) шаг сдвига $\delta$, обеспечивающий ортогональность соседних записей, определяется теоремой Барбастатиса–Псалтиса [3]:
+For holographic multiplexing via shift coding, the shift step $\delta$ that ensures orthogonality between adjacent recordings is given by the Barbastathis–Psaltis theorem [3]:
 
 $$\delta = \frac{\lambda}{2 \cdot n_0 \cdot \mathrm{NA}^2 \cdot L}$$
 
-Для фотополимерной среды с параметрами $L = 1.5$ мм (толщина), $n_0 = 1.5$, $\lambda = 405$ нм, $\mathrm{NA} = 0.5$:
+For a photopolymer medium with parameters $L = 1.5\ \text{mm}$ (thickness), $n_0 = 1.5$, $\lambda = 405\ \text{nm}$, $\mathrm{NA} = 0.5$:
 
-$$\delta = \frac{405 \times 10^{-9}}{2 \times 1.5 \times (0.5)^2 \times 1.5 \times 10^{-3}} = \frac{405 \times 10^{-9}}{1.125 \times 10^{-3}} \approx 1.964\ \text{мкм}$$
+$$\delta = \frac{405 \times 10^{-9}}{2 \times 1.5 \times (0.5)^2 \times 1.5 \times 10^{-3}} = \frac{405 \times 10^{-9}}{1.125 \times 10^{-3}} \approx 1.964\ \mu\text{m}$$
 
-Максимальное число независимых проекций (faces), укладываемых в пятне диаметром $D = 1.5$ мм, составляет:
+The maximum number of independent projections (faces) within a spot of diameter $D = 1.5\ \text{mm}$:
 
-$$N_{\text{faces}} = \left\lfloor \frac{D}{\delta} \right\rfloor = \left\lfloor \frac{1500\ \text{мкм}}{1.964\ \text{мкм}} \right\rfloor = \mathbf{381}$$
+$$N_{\text{faces}} = \left\lfloor \frac{D}{\delta} \right\rfloor = \left\lfloor \frac{1500\ \mu\text{m}}{1.964\ \mu\text{m}} \right\rfloor = \mathbf{381}$$
 
-Это означает, что в одном физическом пятне диаметром 1.5 мм можно записать 381 полностью независимую голографическую проекцию без взаимной интерференции, что является прямым физическим аналогом многогранниковой (face-based) структуры GaloGlyph-узлов в пространстве $G(p, \mathbb{C}^n)$.
+381 fully independent holographic projections can be written into a single 1.5 mm spot without mutual interference. This is the direct physical analogue of the multi-face projection tensor structure used in the `sqlite-vector` Grassmannian index $G(p, \mathbb{C}^n)$.
 
-### 1.3 Термодинамическая стабильность по Ландауэру
+### 1.3 Thermodynamic Stability: Landauer Limit
 
-Пороговая энергия стирания одного бита информации при температуре $T$ (предел Ландауэра) [4]:
+The minimum energy required to erase one bit of information at temperature $T$ (Landauer limit) [4]:
 
 $$E_{\text{Landauer}} = k_B \cdot T \cdot \ln 2$$
 
-При физиологической температуре $T = 310$ К:
+At physiological temperature $T = 310\ \text{K}$:
 
-$$E_{\text{Landauer}}(310\ \text{К}) = 1.381 \times 10^{-23} \times 310 \times 0.6931 \approx 2.966 \times 10^{-21}\ \text{Дж} \approx 18.5\ \text{мэВ}$$
+$$E_{\text{Landauer}}(310\ \text{K}) = 1.381 \times 10^{-23} \times 310 \times 0.6931 \approx 2.966 \times 10^{-21}\ \text{J} \approx 18.5\ \text{meV}$$
 
-Энергия фотона когерентного записывающего лазера при $\lambda = 500$ нм:
+Photon energy of the coherent recording laser at $\lambda = 500\ \text{nm}$:
 
-$$E_{\text{photon}} = \frac{hc}{\lambda} = \frac{6.626 \times 10^{-34} \times 2.998 \times 10^8}{500 \times 10^{-9}} \approx 3.974 \times 10^{-19}\ \text{Дж} \approx 2.48\ \text{эВ}$$
+$$E_{\text{photon}} = \frac{hc}{\lambda} = \frac{6.626 \times 10^{-34} \times 2.998 \times 10^8}{500 \times 10^{-9}} \approx 3.974 \times 10^{-19}\ \text{J} \approx 2.48\ \text{eV}$$
 
-Отношение:
+Protection ratio:
 
-$$\frac{E_{\text{photon}}}{E_{\text{Landauer}}} = \frac{2.48\ \text{эВ}}{18.5 \times 10^{-3}\ \text{эВ}} \approx \mathbf{134}$$
+$$\frac{E_{\text{photon}}}{E_{\text{Landauer}}} = \frac{2.48\ \text{eV}}{18.5 \times 10^{-3}\ \text{eV}} \approx \mathbf{134\times}$$
 
-Энергия пишущего фотона превышает предел тепловой деградации в 134 раза. Это обеспечивает абсолютную термодинамическую защиту голографической записи от флуктуаций теплового поля при рабочих температурах вплоть до ~4150 К — значительно выше точки Кюри LiNbO₃ ($T_C \approx 1140°\text{C} = 1413$ К).
+The writing photon energy exceeds the thermal decoherence threshold by 134×, providing absolute thermodynamic protection against thermal fluctuation at operating temperatures up to ~4,150 K — well above the LiNbO₃ Curie point ($T_C \approx 1,413\ \text{K}$).
 
-**Ссылки:**  
-[1] van Heerden, P.J. *Appl. Opt.* **2**(4), 393–400 (1963). DOI: 10.1364/AO.2.000393  
-[2] Pribram, K.H.; Nishiyama, Y. *Biosystems* **35**(1–3), 97–107 (1995). DOI: 10.1016/0303-2647(94)01499-Y  
-[3] Barbastathis, G.; Psaltis, D. *Opt. Lett.* **21**(6), 432–434 (1996). DOI: 10.1364/OL.21.000432  
-[4] Landauer, R. *IBM J. Res. Dev.* **5**(3), 183–191 (1961). DOI: 10.1147/rd.53.0183
+**References:**  
+[1] van Heerden, P.J. *Appl. Opt.* **2**(4), 393–400 (1963). DOI: [10.1364/AO.2.000393](https://doi.org/10.1364/AO.2.000393)  
+[2] Pribram, K.H.; Nishiyama, Y. *Biosystems* **35**(1–3), 97–107 (1995). DOI: [10.1016/0303-2647(94)01499-Y](https://doi.org/10.1016/0303-2647(94)01499-Y)  
+[3] Barbastathis, G.; Psaltis, D. *Opt. Lett.* **21**(6), 432–434 (1996). DOI: [10.1364/OL.21.000432](https://doi.org/10.1364/OL.21.000432)  
+[4] Landauer, R. *IBM J. Res. Dev.* **5**(3), 183–191 (1961). DOI: [10.1147/rd.53.0183](https://doi.org/10.1147/rd.53.0183)
 
 ---
 
-## 2. СПЕКТРОСКОПИЯ ПЕРЕХОДНОГО ПОГЛОЩЕНИЯ (TA) И КРЕМНИЕВЫЕ МЕМБРАНЫ
+## 2. Transient Absorption (TA) Spectroscopy and Membrane Substrates
 
-### 2.1 Архитектура безлинзовой рентгеновской TA-установки
+### 2.1 Lensless X-Ray TA Setup Architecture
 
-Спектроскопия переходного поглощения (Transient Absorption, TA) плёнок NiO в рентгеновском диапазоне реализуется на синхротронных линиях с характеристическими параметрами, типичными для комплексов INFN-LNF (Frascati) SPARC_LAB [5] и European XFEL BL1 [6]:
+Transient absorption spectroscopy of NiO thin films in the soft X-ray range is performed at synchrotron beamlines with parameters typical of INFN-LNF (Frascati) SPARC_LAB [5] and European XFEL BL1 [6]:
 
-- **Энергия зондирующих фотонов:** 850–870 эВ (область Ni L₂,₃-края поглощения)
-- **Длительность рентгеновского импульса:** 100–300 фс (при компрессии сгустка)
-- **Частота импульсов:** 56–280 кГц (XFEL-режим «burst»)
-- **Возбуждающий лазерный импульс:** Ti:Sapphire, 800 нм, 50–100 фс, задержка pump-probe $\Delta t \in [-1\ \text{пс};\ +1\ \text{нс}]$
+- **Probe photon energy:** 850–870 eV (Ni L₂,₃ absorption edge)
+- **X-ray pulse duration:** 100–300 fs (after bunch compression)
+- **Repetition rate:** 56–280 kHz (XFEL burst mode)
+- **Pump laser:** Ti:Sapphire, 800 nm, 50–100 fs; pump-probe delay $\Delta t \in [-1\ \text{ps};\ +1\ \text{ns}]$
 
-Схема безлинзовой геометрии (lensless geometry) исключает фокусирующую оптику из рентгенового тракта, что устраняет хроматическую аберрацию и паразитное рассеяние на оптических элементах. Детектирование осуществляется матрицей DSSC (Depfet Sensor with Signal Compression) или эквивалентным пиксельным детектором MiniSDD непосредственно в дальнем поле рассеянного пучка.
+The lensless geometry eliminates focusing optics from the X-ray path, removing chromatic aberration and parasitic scattering. Detection is performed by a DSSC (Depfet Sensor with Signal Compression) or equivalent MiniSDD pixel detector in the far field of the scattered beam.
 
-### 2.2 Проблема теплового накопления при высокой частоте повторения
+### 2.2 Thermal Accumulation at High Repetition Rate
 
-При работе в режиме высокой частоты повторения ($f_{\text{rep}} \geq 56$ кГц) критическим ограничением становится тепловое накопление в тонкоплёночной подложке. Для пленки NiO толщиной $d_{\text{NiO}} = 20$ нм на подложке толщиной $d_{\text{sub}} = 200$ нм тепловой поток определяется уравнением диффузии:
+At high repetition rates ($f_{\text{rep}} \geq 56\ \text{kHz}$) the dominant constraint is thermal accumulation in the thin-film substrate. For a 20 nm NiO film on a 200 nm substrate, the heat flux follows the diffusion equation:
 
 $$\frac{\partial T}{\partial t} = \frac{\kappa}{\rho \cdot c_p} \nabla^2 T + \frac{Q(t)}{\rho \cdot c_p}$$
 
-где $\kappa$ — теплопроводность, $\rho$ — плотность, $c_p$ — теплоёмкость, $Q(t)$ — мощность лазерного нагрева. При $f_{\text{rep}} = 280$ кГц период между импульсами ($\sim 3.57$ мкс) оказывается сопоставимым или меньше характеристического времени термической релаксации подложки, что ведёт к прогрессирующему накоплению тепла и деградации образца.
+where $\kappa$ is thermal conductivity, $\rho$ density, $c_p$ heat capacity, and $Q(t)$ the laser heating power. At $f_{\text{rep}} = 280\ \text{kHz}$ the inter-pulse interval (~3.57 µs) is shorter than or comparable to the substrate thermal relaxation time, leading to progressive heat accumulation and sample degradation.
 
-### 2.3 Сравнительная эффективность теплоотвода подложек
+### 2.3 Substrate Thermal Performance Comparison
 
-Для количественного сравнения теплоотводящих свойств подложек вводится безразмерный критерий Figure of Merit (FOM), определяемый как отношение свободного члена (Intercept) к угловому коэффициенту (Slope) линейной аппроксимации зависимости пикового превышения температуры $\Delta T_{\max}$ от частоты повторения $f_{\text{rep}}$ в диапазоне 56–280 кГц. Высокое значение FOM соответствует слабой чувствительности к росту частоты (хороший теплоотвод).
+The substrate thermal efficiency is quantified by the dimensionless Figure of Merit (FOM), defined as the ratio of Intercept to Slope of the linear fit of peak temperature rise $\Delta T_{\max}$ vs. repetition rate $f_{\text{rep}}$ over 56–280 kHz. Higher FOM indicates lower sensitivity to repetition rate increase (better heat dissipation).
 
-**Таблица 1.** FOM теплоотвода для полупроводниковых подложек толщиной 200 нм при лазерном нагреве (fluence = 5 мДж/см², $\lambda_{\text{pump}}$ = 800 нм)
+**Table 1.** Substrate FOM for 200 nm membranes under laser heating (fluence = 5 mJ/cm², $\lambda_{\text{pump}}$ = 800 nm)
 
-| Материал подложки | Теплопроводность $\kappa$ (Вт/м·К) | FOM (Intercept/Slope) | Режим отказа |
+| Substrate | Thermal conductivity $\kappa$ (W/m·K) | FOM (Intercept/Slope) | Failure mode |
 |---|---|---|---|
-| Чистый кремний (Si) | 130–150 | **3.0** | Катастрофический перегрев, кристаллизация NiO |
-| Нитрид кремния (Si₃N₄) | 20–30 | **16.9** | Эталон стабильности, отсутствие деградации |
-| CVD-алмаз + Cu (100 нм) | 2000 (алмаз) / 400 (Cu) | **16.6** | Высокая коэрцитивная стойкость |
+| Silicon (Si) | 130–150 | **3.0** | Catastrophic overheating, NiO recrystallization |
+| Silicon nitride (Si₃N₄) | 20–30 | **16.9** | Reference — no degradation observed |
+| CVD diamond + Cu (100 nm) | 2000 (diamond) / 400 (Cu) | **16.6** | High coercive stability |
 
-Несмотря на то что теплопроводность Si (130–150 Вт/м·К) значительно превышает $\kappa$ нитрида кремния (20–30 Вт/м·К), высокая теплоёмкость и акустический импеданс Si приводят к формированию стоячих тепловых волн на границе Si/NiO при высоких $f_{\text{rep}}$. Это создаёт периодические зоны перегрева, которые инициируют нежелательную рекристаллизацию и структурные фазовые переходы в плёнке NiO уже при $f_{\text{rep}} > 100$ кГц.
+Despite Si having a thermal conductivity 5–7× higher than Si₃N₄, its heat capacity and acoustic impedance generate standing thermal waves at the Si/NiO interface at high $f_{\text{rep}}$, creating periodic hotspots that trigger NiO recrystallization above 100 kHz.
 
-**Вывод.** Кремниевые подложки неприемлемы для непрерывных ультрабыстрых pump-probe измерений при $f_{\text{rep}} \geq 56$ кГц. Мембраны Si₃N₄ и CVD-алмаз с медным теплораспределителем обеспечивают FOM ≈ 16.7–16.9, что в **5.6×** превышает показатель чистого Si и гарантирует структурную целостность исследуемой плёнки на временно́м горизонте $10^6$ лазерных выстрелов.
+**Conclusion.** Silicon substrates are unsuitable for continuous ultrafast pump-probe measurements at $f_{\text{rep}} \geq 56\ \text{kHz}$. Si₃N₄ and CVD-diamond membranes deliver FOM ≈ 16.7–16.9 — **5.6× higher** than pure Si — ensuring structural integrity over $10^6$ laser shots.
 
-**Ссылки:**  
-[5] Ferrario, M. et al. *Nucl. Instrum. Methods Phys. Res. A* **637**(1), S43–S46 (2011). DOI: 10.1016/j.nima.2010.02.018  
-[6] Altarelli, M. et al. (Eds.) *XFEL: The European X-Ray Free-Electron Laser. Technical Design Report.* DESY 2006-097 (2007). DOI: 10.3204/DESY_06-097
+**References:**  
+[5] Ferrario, M. et al. *Nucl. Instrum. Methods Phys. Res. A* **637**(1), S43–S46 (2011). DOI: [10.1016/j.nima.2010.02.018](https://doi.org/10.1016/j.nima.2010.02.018)  
+[6] Altarelli, M. et al. (Eds.) *XFEL: The European X-Ray Free-Electron Laser. Technical Design Report.* DESY 2006-097 (2007). DOI: [10.3204/DESY_06-097](https://doi.org/10.3204/DESY_06-097)
 
 ---
 
-## 3. АЛГОРИТМЫ ФИЛЬТРАЦИИ И ПОДАВЛЕНИЯ ШУМОВ НА ДЕТЕКТОРЕ
+## 3. Detector Calibration Algorithms (DSSC / MiniSDD)
 
-### 3.1 Математическая модель коррекции плоского поля
+### 3.1 Flat-Field Correction Model
 
-Сырой сигнал пиксельного детектора $I_{\text{raw}}(i,j)$ содержит три класса артефактов: неравномерность квантовой эффективности пикселей (flat-field), нелинейность передаточной функции и аддитивный шум. Для детекторов класса DSSC (Depfet Sensor with Signal Compression, MiniSDD-тип) [7] полная модель сигнала имеет вид:
+The raw pixel signal $I_{\text{raw}}(i,j)$ contains three artifact classes: pixel quantum-efficiency non-uniformity (flat-field), detector transfer function nonlinearity, and additive readout noise. For DSSC-class detectors (MiniSDD type) [7], the full signal model is:
 
 $$I_{\text{raw}}(i,j) = f_{\text{nl}}\bigl[FF(i,j) \cdot I_{\text{true}}(i,j)\bigr] + N_{\text{read}}(i,j)$$
 
-где $FF(i,j)$ — карта плоского поля, $f_{\text{nl}}$ — нелинейная передаточная функция детектора, $N_{\text{read}}$ — шум считывания.
+where $FF(i,j)$ is the flat-field map, $f_{\text{nl}}$ is the nonlinear transfer function, and $N_{\text{read}}$ is readout noise.
 
-**Коррекция плоского поля.** Функционал минимизации:
+**Flat-field correction.** Minimization objective:
 
 $$J_{\text{ff}} = \sum_{i,j} \left( \frac{I_{\text{raw}}(i,j)}{FF(i,j)} - \langle I \rangle \right)^2 \xrightarrow{FF} \min$$
 
-где $\langle I \rangle$ — среднее по всем пикселям при освещении однородным источником (flat-field кадр). Оптимальная карта $FF^*(i,j)$ находится как:
+where $\langle I \rangle$ is the pixel mean under uniform illumination. The optimal map:
 
 $$FF^*(i,j) = \frac{I_{\text{raw}}^{\text{flat}}(i,j)}{\langle I_{\text{raw}}^{\text{flat}} \rangle}$$
 
-### 3.2 Коррекция нелинейности передаточной функции
+### 3.2 Nonlinearity Correction
 
-Нелинейный передаточный отклик детектора аппроксимируется полиномом $n$-й степени или кубическим сплайном. Функционал оптимизации:
+The nonlinear detector response is approximated by an $n$-th degree polynomial or cubic spline. Optimization objective:
 
 $$J_{\text{nl}} = \sum_{k} \left( f\bigl(I_{\text{cal},k}\bigr) - I_{\text{true},k} \right)^2 \xrightarrow{f} \min$$
 
-где $\{(I_{\text{cal},k},\ I_{\text{true},k})\}_{k=1}^{K}$ — калибровочные пары, полученные с прецизионным источником известной интенсивности (аттенюированный монохроматический пучок синхротрона с измеренным потоком фотонов). Минимум $J_{\text{nl}}$ достигается методом нелинейных наименьших квадратов (Levenberg–Marquardt).
+where $\{(I_{\text{cal},k},\ I_{\text{true},k})\}$ are calibration pairs from a precision monochromatic source (attenuated synchrotron beam with measured photon flux). Minimized via Levenberg–Marquardt nonlinear least squares.
 
-### 3.3 Достижение предела дробового шума
+### 3.3 Achieving the Photon Shot-Noise Limit
 
-После двухэтапной коррекции стандартное отклонение откалиброванного сигнала $\sigma_{\text{cal}}$ стремится к пределу дробового шума фотонов (photon shot-noise limit):
+After two-stage calibration, the standard deviation of the corrected signal $\sigma_{\text{cal}}$ converges to the photon shot-noise limit:
 
 $$\sigma_{\text{shot}} = \sqrt{\bar{N}}$$
 
-где $\bar{N}$ — среднее число детектированных фотонов на пиксель за одно измерение. Критерий качества калибровки — коэффициент шума (Noise Factor):
+where $\bar{N}$ is the mean number of detected photons per pixel per measurement. Calibration quality metric — Noise Factor:
 
-$$\mathrm{NF} = \frac{\sigma_{\text{cal}}}{\sigma_{\text{shot}}} = \frac{\sigma_{\text{cal}}}{\sqrt{\bar{N}}} \xrightarrow{\text{идеал}} 1.00$$
+$$\mathrm{NF} = \frac{\sigma_{\text{cal}}}{\sigma_{\text{shot}}} = \frac{\sigma_{\text{cal}}}{\sqrt{\bar{N}}} \xrightarrow{\text{ideal}} 1.00$$
 
-**Таблица 2.** Достигаемые значения NF для DSSC (MiniSDD) после этапов калибровки
+**Table 2.** Achieved NF values for DSSC (MiniSDD) across calibration stages
 
-| Этап калибровки | NF (типовое) | Доминирующий остаточный шум |
+| Calibration stage | NF (typical) | Dominant residual noise |
 |---|---|---|
-| Без коррекции | 4.2–6.8 | Неравномерность FF + нелинейность |
-| Только FF-коррекция | 1.8–2.4 | Нелинейность при высоком сигнале |
-| FF + нелинейная коррекция | **1.02–1.08** | Шум считывания (~photon shot-noise limit) |
+| No correction | 4.2–6.8 | FF non-uniformity + nonlinearity |
+| FF correction only | 1.8–2.4 | Nonlinearity at high signal |
+| FF + nonlinearity correction | **1.02–1.08** | Readout noise (≈ photon shot-noise limit) |
 
-Достижение $\mathrm{NF} \leq 1.08$ означает, что детектор работает в режиме, ограниченном квантовой природой излучения, и любая дальнейшая информация может быть извлечена только увеличением числа детектированных фотонов — а не улучшением электроники.
+$\mathrm{NF} \leq 1.08$ means the detector operates at the quantum limit of radiation — further information gain requires more photons, not better electronics.
 
-**Ссылки:**  
-[7] Henriquet, P. et al. *J. Synchrotron Radiat.* **28**(6), 1666–1673 (2021). DOI: 10.1107/S1600577521008559
+**References:**  
+[7] Henriquet, P. et al. *J. Synchrotron Radiat.* **28**(6), 1666–1673 (2021). DOI: [10.1107/S1600577521008559](https://doi.org/10.1107/S1600577521008559)
 
 ---
 
-## 4. МОНЕТИЗАЦИЯ И ЗАКРЫТЫЙ КОНТУР ИНТЕГРАЦИИ (STEALTH-SOVEREIGNTY)
+## 4. Commercialization and Closed Integration Tier
 
-### 4.1 Декларация открытости
+### 4.1 Open Science Declaration
 
-Настоящий документ полностью раскрывает физико-математические модели разделов 1–3 в соответствии с принципами Open Science и воспроизводимого исследования (Reproducible Research). Все формулы, численные параметры и верификационные критерии могут быть независимо проверены в любой оснащённой лаборатории с доступом к синхротронной линии и измерительной оптике класса confocal / holographic.
+Sections 1–3 fully disclose the underlying physical and mathematical models under Open Science and Reproducible Research principles. All equations, numerical parameters, and calibration criteria can be independently verified in any laboratory with access to a synchrotron beamline and confocal/holographic measurement equipment.
 
-Мы разделяем убеждение, что публикация фундаментальных физических пределов ускоряет развитие отрасли в целом и не является конкурентным преимуществом сама по себе. Конкурентное преимуществo — это скорость и точность практической реализации.
+Publication of fundamental physical limits is not a competitive advantage in itself. Competitive advantage is the speed and precision of practical implementation.
 
-### 4.2 Проприетарные gated-компоненты
+### 4.2 Proprietary Gated Components
 
-Следующие программные и аппаратные компоненты являются проприетарной интеллектуальной собственностью **Syn Syndicate** и не раскрываются в настоящем документе:
+The following software and hardware components are proprietary intellectual property of **Synapse R&D** and are not disclosed in this document:
 
-- **`ENC-MAT-MINNEALLOY-OPT-V3`** — высокоскоростная библиотека управления магнитной анизотропией сплавов Fe₁₆N₂ (Minnealloy) с закрытыми сплайн-интерполяторами фазовой диаграммы
-- **`TA-STREAM-ASYNC-SQLITE`** — асинхронный захват потоков данных TA-спектроскопии с прямой записью в СУБД SQLite через APSW/WAL, обеспечивающий >12,000 транзакций/с при параллельной работе агентов
-- **`FF-NL-CALIBRATOR-V2`** — оптимизированный модуль двухэтапной калибровки детектора (FF + нелинейность) с достижением NF ≤ 1.05, включая GPU-ускорение через CUDA kernels
-- **Закрытые весовые модели** фазовой классификации NiO (рок-солевая ↔ метастабильная фазы) на основе рентгеновских спектров, обученные на проприетарном датасете из 847,000 спектральных кадров
+- **`ENC-MAT-MINNEALLOY-OPT-V3`** — High-throughput Fe₁₆N₂ (Minnealloy) magnetic anisotropy control library with closed spline interpolators of the phase diagram
+- **`TA-STREAM-ASYNC-SQLITE`** — Asynchronous TA spectroscopy data capture with direct SQLite write via APSW/WAL, sustaining >12,000 tx/s under parallel agent workloads
+- **`FF-NL-CALIBRATOR-V2`** — Two-stage detector calibration module (FF + nonlinearity) achieving NF ≤ 1.05, with GPU acceleration via CUDA kernels
+- **Closed-weight phase classification models** for NiO (rock-salt ↔ metastable phases) from X-ray spectra, trained on a proprietary dataset of 847,000 spectral frames
 
-### 4.3 Аппаратный анклав и условия доступа
+### 4.3 Hardware Enclave Deployment and Access Conditions
 
-Все перечисленные gated-компоненты разворачиваются исключительно в изолированных аппаратных анклавах уровня **L0 TEE** (ARM TrustZone, ECDSA-P384, AES-256-GCM), что исключает возможность извлечения кода или весов даже при физическом доступе к носителю.
+All gated components deploy exclusively in isolated hardware enclaves at **L0 TEE** level (ARM TrustZone, ECDSA-P384, AES-256-GCM), preventing code or weight extraction even under physical device access.
 
-**Условия доступа:**
+**Access terms:**
 
-| Параметр | Значение |
+| Parameter | Value |
 |---|---|
-| Платформа | Synapse OS Cognitive Marketplace v3.0 |
-| Стоимость лицензии | 100,000 USDC (корпоративная бессрочная) |
-| Правовой режим | Корпоративный NDA + сублицензионный запрет |
-| Форма поставки | Sealed binary в L0 TEE enclave, удалённая аттестация Intel RA-TLS |
-| NDA-демо | Доступно по запросу для верифицированных юридических лиц |
-| Контакт | `marketplace@syn-syndicate.io` / Synapse Agent Gateway |
+| Platform | Synapse OS Cognitive Marketplace v3.0 |
+| License price | 100,000 USDC (corporate perpetual) |
+| Legal regime | Corporate NDA + sublicensing prohibition |
+| Delivery format | Sealed binary in L0 TEE enclave, remote attestation via Intel RA-TLS |
+| NDA demo | Available on request for verified legal entities |
+| Contact | `marketplace@syn-syndicate.io` / Synapse Agent Gateway |
 
-Развёртывание компонентов осуществляется через защищённый канал с криптографической аттестацией анклава (Remote Attestation, RA-TLS), что гарантирует выполнение кода строго в доверенной среде без возможности его перехвата или модификации.
+Deployment is performed through a secured channel with cryptographic enclave attestation (Remote Attestation, RA-TLS), guaranteeing code execution strictly within the trusted environment with no possibility of interception or modification.
 
 ---
 
-*Документ подготовлен в рамках R&D-раскрытия Syn Syndicate / Synapse Core SDK. Для цитирования: Syn Syndicate R&D Division. "Semiconductors: Physical Limits and Engineering Solutions for Photonic Memory and Ultrafast Spectroscopy." sqlite-vector repository, 2026.*
+*Synapse Core SDK — R&D Division. For citation: Synapse R&D. "Semiconductors: Physical Limits and Engineering Solutions for Photonic Memory and Ultrafast Spectroscopy." sqlite-vector repository, 2026.*
