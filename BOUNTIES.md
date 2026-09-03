@@ -1,3 +1,7 @@
+<!-- Copyright 2026 Synapse Core Contributors
+     Licensed under the Apache License, Version 2.0
+     http://www.apache.org/licenses/LICENSE-2.0 -->
+
 # NGP 4.5 — Research Directions
 
 > **These are not job postings. We do not pay in cash.**
