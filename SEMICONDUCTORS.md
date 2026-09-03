@@ -1,3 +1,7 @@
+<!-- Copyright 2026 Synapse Core Contributors
+     Licensed under the Apache License, Version 2.0
+     http://www.apache.org/licenses/LICENSE-2.0 -->
+
 # SEMICONDUCTORS: Physical Storage Limits and Engineering Solutions for Photonic Memory and Ultrafast Spectroscopy
 
 **Status:** Open R&D Release · Reproducible Research  
