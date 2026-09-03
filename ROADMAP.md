@@ -1,3 +1,7 @@
+<!-- Copyright 2026 Synapse Core Contributors
+     Licensed under the Apache License, Version 2.0
+     http://www.apache.org/licenses/LICENSE-2.0 -->
+
 # ROADMAP: Quantum-Cognitive Memory Representations & Future Directions
 
 This document outlines the theoretical foundations and the strategic multi-phase research and development roadmap of the **Sovereign Vector & Distributed Memory Layer**. Our objective is to move beyond flat, resource-heavy, centralized Vector Databases (RAG) toward highly optimized, decentralized, and biophysically-inspired cognitive architectures.
