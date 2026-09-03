@@ -1,3 +1,7 @@
+<!-- Copyright 2026 Synapse Core Contributors
+     Licensed under the Apache License, Version 2.0
+     http://www.apache.org/licenses/LICENSE-2.0 -->
+
 # THEORETICAL MANIFESTO: QUANTUM-COGNITIVE INTERLOCK & DISSIPATIVE BRAIN DYNAMICS
 ## NGP 4.5 — Phase IV (Beyond the Turing Limit)
 
