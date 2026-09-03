@@ -1,3 +1,7 @@
+<!-- Copyright 2026 Synapse Core Contributors
+     Licensed under the Apache License, Version 2.0
+     http://www.apache.org/licenses/LICENSE-2.0 -->
+
 # SQLite-Vector (AVX-512 Optimized Engine)
 
 > **High-Throughput Vector Indexing & Grassmannian Projection Extension for Embedded SQLite Databases**
@@ -99,3 +103,27 @@ This project is dual-licensed:
 2. **Enterprise & DeSci Licensing:** For high-throughput B2B deployment, custom AST-compression pipelines, or hardware integration contracts, request enterprise access via verified NDA channels.
 
 Contact: `marketplace@syn-syndicate.io`
+
+---
+
+## Licensing
+
+This project is licensed under the Apache License, Version 2.0 (the "License").
+You may not use this file except in compliance with the License. You may obtain
+a copy of the License at:
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+### Patent Grant & Defense Commitment
+
+By utilizing or contributing to this repository under the Apache 2.0 license,
+you are granted a royalty-free, perpetual patent license by the authors. This
+license includes a reciprocal defense clause: any patent litigation instituted
+against Synapse Core or its contributors automatically terminates all patent
+rights granted to you under this license. We protect open-source innovation
+from corporate patent aggression.
