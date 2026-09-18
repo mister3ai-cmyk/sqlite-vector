@@ -120,9 +120,17 @@ class AsyncPaperHarvester:
 
     # --- real fetchers ---
 
-    async def fetch_arxiv(self, query: str, max_results: int = 5) -> List[Dict[str, Any]]:
+    async def fetch_arxiv(
+        self, query: str, max_results: int = 5, categories: Optional[List[str]] = None
+    ) -> List[Dict[str, Any]]:
         await asyncio.sleep(self.rate_limit_delay)
-        encoded = urllib.parse.quote(f'all:"{query}"')
+        kw_part = f'all:"{query}"'
+        if categories:
+            cat_part = " OR ".join(f"cat:{c}" for c in categories)
+            search_query = f"({kw_part}) AND ({cat_part})"
+        else:
+            search_query = kw_part
+        encoded = urllib.parse.quote(search_query)
         url = f"http://export.arxiv.org/api/query?search_query={encoded}&max_results={max_results}"
         try:
             text = await self._get_text(url)
