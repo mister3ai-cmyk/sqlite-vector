@@ -153,7 +153,7 @@ it is a permanent, cryptographically signed record of your contribution to the s
 - Priority access to higher-tier research enclaves
 - Founding contributor status in the L1 Neocortex (immutable, Ed25519 signed)
 - Governance weight in future protocol decisions
-- Visibility to the Syn Syndicate core team
+- Visibility to the Synapse Core Infrastructure team
 
 | Role | PoK per contribution |
 |------|---------------------|

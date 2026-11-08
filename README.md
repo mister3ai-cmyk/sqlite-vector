@@ -206,7 +206,7 @@ This project is dual-licensed:
 1. **Open Source Core:** Distributed under the MIT / Apache 2.0 License for academic and non-commercial research.
 2. **Enterprise & DeSci Licensing:** For high-throughput B2B deployment, custom AST-compression pipelines, or hardware integration contracts, request enterprise access via verified NDA channels.
 
-Contact: `marketplace@syn-syndicate.io`
+Contact: `contact@synapse-core.pp.ua`
 
 ---
 

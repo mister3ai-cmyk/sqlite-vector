@@ -15,7 +15,7 @@
 #!/usr/bin/env python3
 """
 Cognitive Fidelity Benchmark — NGP 4.5
-Hyper-Tetrapod Engine · 432 Hz · Syn Syndicate
+Hyper-Tetrapod Engine · 432 Hz · Synapse Core Infrastructure
 
 Run:
     pip install numpy
@@ -376,7 +376,7 @@ def run():
     sep = "=" * 64
     print(sep)
     print("  Cognitive Fidelity Benchmark — NGP 4.5")
-    print(f"  Hyper-Tetrapod · {FREQ_HZ} Hz · Syn Syndicate")
+    print(f"  Hyper-Tetrapod · {FREQ_HZ} Hz · Synapse Core Infrastructure")
     print(sep)
 
     if os.path.exists(DB_PATH):
