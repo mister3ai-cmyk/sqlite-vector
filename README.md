@@ -2,7 +2,9 @@
      Licensed under the Apache License, Version 2.0
      http://www.apache.org/licenses/LICENSE-2.0 -->
 
-# SQLite-Vector (AVX-512 Optimized Engine)
+# SQLite-Vector
+
+> **CORRECTION NOTICE (2026-11-08, by the author).** This repository contains Python prototypes only. There are no native C/Rust kernels and no AVX-512 code in it, and the build instructions and performance table below do not correspond to code in this repository; they described a planned engine. The benchmarked vector engine is [Genesis Live Core](https://github.com/mister3ai-cmyk/genesis-live-core) ([10.5281/zenodo.23447704](https://doi.org/10.5281/zenodo.23447704)), which uses AVX2/POPCNT, not AVX-512. Claims in `THEORY.md` and the research modules are models, not measurements.
 
 > **High-Throughput Vector Indexing & Grassmannian Projection Extension for Embedded SQLite Databases**
 
@@ -42,7 +44,8 @@ Optimized for hardware-accelerated SIMD instructions (AVX-512), it delivers high
 | **Аппаратные требования** | Кластер GPU (A100/H100), RAM $\ge 64$–$128$ ГБ | **VPS / Edge Hardware (от $5/мес)** | Локализация на оптимизированном SQLite + WAL |
 | **Потребление RAM** | Десятки ГБ (экспоненциальный рост индекса) | **Фиксированный профиль ($\le 256$ МБ)** | Проекции $128	imes$ на многообразие Грассмана $G(4, \mathbb{C}^{64})$ |
 | **Латентность выборки** | 5 – 25 мс (задержки PCIe + десериализация) | **Суб-микросекундная ($\le 350$ нс)** | Асинхронный кольцевой буфер `/dev/shm`, ноль оверхеда |
-| **Физический субстрат** | Кремниевые транзисторы (< 2 нм, ток утечки) | **Фотонные кристаллы TFLN ($	ext{LiNbO}_3$)** | Предел Ван Хирдена ($ho = n_0^3 / \lambda^3$) |
+| **Физический субстрат** | Кремниевые транзисторы (< 2 нм, ток утечки) | **Фотонные кристаллы TFLN ($	ext{LiNbO}_3$)** | Предел Ван Хирдена ($
+ho = n_0^3 / \lambda^3$) |
 | **Плотность данных** | Ограничена планарной литографией кремния | **70.7 Тбит/см³** | Трёхмерный объемный фазовый носитель |
 | **Энергетическая диссипация** | Тепловой тупик предела Ландауэра ($k_B T \ln 2$) | **Гашение нагрева 99.85%** | Неэрмитова непрерывная динамика в точке $EP2$ |
 | **Снижение CapEx / OpEx** | Базовый уровень расходов дата-центров | **Экономия 40%–70%** | Устранение оверхеда тяжелых векторных БД и лишних вызовов |
