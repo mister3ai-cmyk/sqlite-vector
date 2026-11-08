@@ -203,7 +203,7 @@ All gated components deploy exclusively in isolated hardware enclaves at **L0 TE
 | Legal regime | Corporate NDA + sublicensing prohibition |
 | Delivery format | Sealed binary in L0 TEE enclave, remote attestation via Intel RA-TLS |
 | NDA demo | Available on request for verified legal entities |
-| Contact | `marketplace@syn-syndicate.io` / Synapse Agent Gateway |
+| Contact | `contact@synapse-core.pp.ua` / Synapse Agent Gateway |
 
 Deployment is performed through a secured channel with cryptographic enclave attestation (Remote Attestation, RA-TLS), guaranteeing code execution strictly within the trusted environment with no possibility of interception or modification.
 
